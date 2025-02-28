@@ -27,7 +27,7 @@ try {
     $stmt->bindParam(':phone', $phone);
     $stmt->execute();
 
-    echo "Data saved successfully!";
+    header('Location: success.php'); 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }

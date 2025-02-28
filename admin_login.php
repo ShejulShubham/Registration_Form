@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Admin Login</title>
 </head>
 <body>
-    <h1>Admin Login</h1>
-    <form action="admin_auth.php" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+    <div class="form-container">
+        <div class="header">
+            <h1>Admin Login</h1>
+        </div>
+        <form action="admin_auth.php" method="POST">
+            <div class="input">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+            </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-
-        <button type="submit">Login</button>
-    </form>
-    <br>
-    <br>
-    <div>
-        <a href='index.php'><button>Submit user form</button></a>
+            <div class="input">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+            </div>
+            <div class="btn">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <p>Submit user form <a href='index.php'>Here</p></a>
     </div>
 </body>
 </html>
