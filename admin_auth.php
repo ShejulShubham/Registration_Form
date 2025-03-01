@@ -1,17 +1,26 @@
 <?php
 session_start();
 
+require 'vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+// Load the .env file
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 // Database connection
-$host = 'localhost';
-$dbname = 'registration';
-$username = 'root';
-$password = '';
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASSWORD'];
+$port = $_ENV['PORT'];
 
 try {
     // $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     
     // specifying custom port number for MySQL
-    $conn = new PDO("mysql:host=$host;port=3307;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Get form data

@@ -1,17 +1,25 @@
 <?php
 require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Dotenv\Dotenv;
+
+
+
+// Load the .env file
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "registration";
-$port = 3307;
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASSWORD'];
+$port = $_ENV['PORT'];
 
-$conn = new mysqli($servername, $username, $password, $database, $port);
+$conn = new mysqli($host, $username, $password, $dbname, $port);
 
 // check for error
 if ($conn->connect_error) {
