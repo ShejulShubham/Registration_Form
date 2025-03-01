@@ -56,9 +56,10 @@ follow the steps to set-up environment and dependencies.
 
 ### **Step 3: Create the Project Folder**
 1. Navigate to the `htdocs` folder in your XAMPP installation directory (e.g., `C:\xampp\htdocs`).
-2. Create a folder for your project (e.g., `form_app`).
-
-
+2. Clone the repository using following command.
+   ```git
+      git clone "respository_url"
+   ```
 ---
 
 ### **Step 4: Install PhpSpreadsheet**
